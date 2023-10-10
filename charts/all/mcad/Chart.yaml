@@ -1,0 +1,6 @@
+apiVersion: v2
+description: A helm chart to build then deploy MCAD
+keywords:
+- pattern
+name: mcad
+version: 0.0.1

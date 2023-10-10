@@ -6,8 +6,8 @@ clusterGroup:
     - open-cluster-management
     - vault
     - golang-external-secrets
-    - config-demo
-    - hello-world
+    - mcad
+    - devsecops-ci
 
   subscriptions:
     acm:
@@ -15,11 +15,15 @@ clusterGroup:
       namespace: open-cluster-management
       channel: release-2.8
       #csv: advanced-cluster-management.v2.6.1
+  
+    openshift-pipelines:
+      name: openshift-pipelines-operator-rh
+      namespace: openshift-operators
 
   projects:
     - hub
-    - config-demo
-    - hello-world
+    - mcad
+    - ci
 
   applications:
     acm:
@@ -32,7 +36,7 @@ clusterGroup:
         kind: ManagedClusterInfo
         jsonPointers:
           - /spec/loggingCA
-
+  
     vault:
       name: vault
       namespace: vault
@@ -45,18 +49,28 @@ clusterGroup:
       project: hub
       path: common/golang-external-secrets
 
-    config-demo:
-      name: config-demo
-      namespace: config-demo
-      project: config-demo
-      path: charts/all/config-demo
+    # cosign:
+    #   name: cosign
+    #   namespace: devsecops-ci
+    #   project: ci
+    #   path: charts/all/cosign
 
-    hello-world:
-      name: hello-world
-      namespace: hello-world
-      project: hello-world
-      path: charts/all/hello-world
+    # pipelines:
+    #   name: pipelines
+    #   namespace: devsecops-ci
+    #   project: ci
+    #   path: charts/all/pipelines
+    #   ignoreDifferences:
+    #   - kind: ServiceAccount
+    #     jsonPointers:
+    #     - /imagePullSecrets
+    #     - /secrets
 
+    # mcad:
+    #   name: mcad
+    #   namespace: mcad
+    #   project: mcad
+    #   path: charts/all/mcad
   imperative:
     # NOTE: We *must* use lists and not hashes. As hashes lose ordering once parsed by helm
     # The default schedule is every 10 minutes: imperative.schedule

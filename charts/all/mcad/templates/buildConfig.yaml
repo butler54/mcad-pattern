@@ -1,0 +1,28 @@
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: stack
+  namespace: {{ .Values.mcad.namespace }}
+  labels:
+    app: stack
+spec:
+  source:
+    type: Git
+    git:
+      uri: https://github.com/project-codeflare/multi-cluster-app-dispatcher
+      ref: {{ .Values.mcad.version }}
+  strategy:
+    type: Docker                      
+    dockerStrategy:
+      dockerfilePath: Dockerfile
+      from:
+        kind: ImageStreamTag  
+        namespace: datamesh
+        name: ubi:latest
+  output:
+    to:
+      kind: ImageStreamTag
+      name: stack:latest
+  triggers:
+  - type: ImageChange

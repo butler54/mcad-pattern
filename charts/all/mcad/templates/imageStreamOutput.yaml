@@ -1,0 +1,8 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: stack
+  namespace: datamesh
+spec:
+  lookupPolicy:
+    local: false

@@ -1,4 +1,10 @@
-# Multicloud Gitops
+# MCAD pattern
+What is this?
+
+Testing to deploy 'just MCAD' into an OCP cluster and built from scratch on cluster so multiple architectures can be supported. This template is probably bulky for the purpose, however, allows flexibility moving forward
+
+
+# Multicloud Gitops (template)
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
