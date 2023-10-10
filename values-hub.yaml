@@ -49,11 +49,11 @@ clusterGroup:
       project: hub
       path: common/golang-external-secrets
 
-    # cosign:
-    #   name: cosign
-    #   namespace: devsecops-ci
-    #   project: ci
-    #   path: charts/all/cosign
+    cosign:
+      name: cosign
+      namespace: devsecops-ci
+      project: ci
+      path: charts/all/cosign
 
     # pipelines:
     #   name: pipelines
