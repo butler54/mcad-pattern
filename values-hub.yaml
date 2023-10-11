@@ -1,6 +1,9 @@
-global:
-  git:
-    taskImage: image-registry.openshift-image-registry.svc:5000/openshift/tools
+devel: 
+  image: chat-client:latest
+  npmbase: quay.io/hybridcloudpatterns/ubi-npm
+  namespace: devsecops-ci
+  roxCTLImage: registry.access.redhat.com/advanced-cluster-security/rhacs-roxctl-rhel8:3.71.0-5
+
 
 clusterGroup:
   name: hub
@@ -70,6 +73,11 @@ clusterGroup:
         - /imagePullSecrets
         - /secrets
 
+    cli-tools:
+      name: cli-tools
+      namespace: openshift
+      project: hub
+      path: charts/hub/cli-tools
     # mcad:
     #   name: mcad
     #   namespace: mcad
