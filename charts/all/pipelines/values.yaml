@@ -1,16 +1,16 @@
 cloudProvider:
-  storageClass: default-rwo
+  storageClass: gp3-csi
 
 site:
   name: example
 
 global:
-  pattern: multicluster-devsecops
-  repoURL: "https://github.com/<git-fork>/multicluster-devsecops"
+  pattern: mcad-pattern
+  repoURL: "https://github.com/butler54/mcad-pattern"
   targetRevision: main
 
   clusterGroup:
-    name: devel
+    name: hub
 
   cicd:
     namespace: devsecops-ci
@@ -19,7 +19,7 @@ global:
     hostname: github.com
     account: PLAINTEXT
     username: PLAINTEXT
-    email: SOMEWHERE@EXAMPLE.COM
+    email: chris.butler@redhat.com
     dev_revision: main
     taskImage: image-registry.openshift-image-registry.svc:5000/openshift/tools
 

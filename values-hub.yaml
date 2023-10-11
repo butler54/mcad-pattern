@@ -1,3 +1,7 @@
+global:
+  git:
+    taskImage: image-registry.openshift-image-registry.svc:5000/openshift/tools
+
 clusterGroup:
   name: hub
   isHubCluster: true
@@ -55,16 +59,16 @@ clusterGroup:
       project: ci
       path: charts/all/cosign
 
-    # pipelines:
-    #   name: pipelines
-    #   namespace: devsecops-ci
-    #   project: ci
-    #   path: charts/all/pipelines
-    #   ignoreDifferences:
-    #   - kind: ServiceAccount
-    #     jsonPointers:
-    #     - /imagePullSecrets
-    #     - /secrets
+    pipelines:
+      name: pipelines
+      namespace: devsecops-ci
+      project: ci
+      path: charts/all/pipelines
+      ignoreDifferences:
+      - kind: ServiceAccount
+        jsonPointers:
+        - /imagePullSecrets
+        - /secrets
 
     # mcad:
     #   name: mcad
