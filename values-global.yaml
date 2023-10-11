@@ -23,6 +23,7 @@ global:
 
   git:
     taskImage: image-registry.openshift-image-registry.svc:5000/openshift/tools
+    email: chris.butler@redhat.com
 
 
 main:
