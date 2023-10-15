@@ -78,6 +78,9 @@ clusterGroup:
         jsonPointers:
         - /imagePullSecrets
         - /secrets
+      overrides:
+        - name: cloudProvider.storageClass
+          value: ibmc-vpc-block-10iops-tier
 
     # Not sure we want this but will test
     # quay-registry:
