@@ -12,4 +12,4 @@ data:
   artifacts.taskrun.format: in-toto
   artifacts.taskrun.storage: tekton
   artifacts.oci.format: simplesigning
-  artifacts.oci.signer: cosign
+  artifacts.oci.signer: x509
