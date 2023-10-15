@@ -8,7 +8,8 @@ metadata:
     argocd.argoproj.io/sync-options: ServerSideApply=true
 data:
   artifacts.oci.storage: 'oci'
-  artifacts.taskrun.format: tekton
+  # this was incorrect below and would not deploy
+  artifacts.taskrun.format: in-toto
   artifacts.taskrun.storage: tekton
   artifacts.oci.format: simplesigning
   artifacts.oci.signer: cosign

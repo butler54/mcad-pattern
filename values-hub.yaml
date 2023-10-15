@@ -26,11 +26,17 @@ clusterGroup:
     openshift-pipelines:
       name: openshift-pipelines-operator-rh
       namespace: openshift-operators
+    
+    quay:
+      name: quay-operator
+      namespace: openshift-operators
 
   projects:
     - hub
     - mcad
     - ci
+    - rollouts
+    
 
   applications:
     acm:
@@ -73,6 +79,12 @@ clusterGroup:
         - /imagePullSecrets
         - /secrets
 
+    # Not sure we want this but will test
+    # quay-registry:
+    #   name: quay-registry
+    #   namespace: quay-enterprise
+    #   project: opp
+    #   path: charts/hub/quay
     cli-tools:
       name: cli-tools
       namespace: openshift
