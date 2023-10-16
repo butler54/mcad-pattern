@@ -33,6 +33,9 @@ global:
       repo: https://github.com/hybrid-cloud-demos/spring-petclinic
       configRepo: https://github.com/hybrid-cloud-demos/spring-petclinic-config
       image: quay.io/hybridcloudpatterns/spring-petclinic:latest
+    mcad:
+      image:
+      repo: https://github.com/project-codeflare/multi-cluster-app-dispatcher
 
   # Should be set consistently with quay enterprise setup
   imageregistry:
