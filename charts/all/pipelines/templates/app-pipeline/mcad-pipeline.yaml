@@ -13,7 +13,7 @@ spec:
     name: APP_SOURCE_REVISION
     type: string
   tasks:
-  - name: source-clone
+  - name: source-clone-mcad
     params:
     - name: url
       value: $(params.APP_SOURCE_GIT)
@@ -34,7 +34,7 @@ spec:
 
   - name: build-app
     runAfter:
-    - source-clone
+    - source-clone-mcad
     taskRef:
       kind: Task
       name: mcad-build
