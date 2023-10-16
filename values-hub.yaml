@@ -81,7 +81,8 @@ clusterGroup:
       overrides:
         - name: cloudProvider.storageClass
           value: ibmc-vpc-block-10iops-tier
-
+        - name: cloudProvider.provisioner
+          value: "vpc.block.csi.ibm.io"
     # Not sure we want this but will test
     # quay-registry:
     #   name: quay-registry

@@ -9,6 +9,7 @@ global:
   repoURL: "https://github.com/butler54/mcad-pattern"
   targetRevision: main
 
+  storageClass: gp3-csi
   clusterGroup:
     name: hub
 
