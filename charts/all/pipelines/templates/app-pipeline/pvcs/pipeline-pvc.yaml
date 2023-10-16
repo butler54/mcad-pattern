@@ -9,7 +9,7 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  storageClassName: {{ .Values.global.storageClass }}
+  storageClassName: {{ .Values.cloudProvider.storageClass }}-vp
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
